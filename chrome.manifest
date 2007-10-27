@@ -1,0 +1,7 @@
+content ffsh chrome/content/
+overlay chrome://browser/content/browser.xul chrome://ffsh/content/ffshOverlay.xul
+
+skin ffsh classic/1.0 chrome/skin/classic/
+style chrome://ffsh/content/ffshOverlay.xul chrome://ffsh/skin/ffshOverlay.css
+
+locale ffsh en-US chrome/locale/en-US/

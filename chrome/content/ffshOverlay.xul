@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<!-- ***** BEGIN LICENSE BLOCK *****
+   - Version: GPL 2.0
+   -
+   - This program is free software: you can redistribute it and/or modify
+   - it under the terms of the GNU General Public License as published by
+   - the Free Software Foundation, either version 2 of the License, or
+   - (at your option) any later version.
+   -
+   - This program is distributed in the hope that it will be useful,
+   - but WITHOUT ANY WARRANTY; without even the implied warranty of
+   - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   - GNU General Public License for more details.
+   -
+   - You should have received a copy of the GNU General Public License
+   - along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+   - The Initial Developer of FFcli is Natsakis Konstantinos.
+   - Portions created by the Initial Developer are Copyright (C) 2006
+   - the Initial Developer. All Rights Reserved.
+   -
+   - Contributor(s):
+   -  Natsakis Konstantinos <gpl@aleph-0.net> (FFcli)
+   -  Dustin J. Mitchell <dustin@v.igoro.us> (ffsh)
+   -
+   - ***** END LICENSE BLOCK ***** -->
+
+<!DOCTYPE overlay SYSTEM "chrome://ffsh/locale/overlay.dtd">
+
+<overlay id="ffshOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://ffsh/content/ffshOverlay.js"/>
+	<script type="application/x-javascript" src="chrome://ffsh/content/ffshFunctions.js"/>
+
+	<window id="main-window">
+		<command id="ffsh_setPref_newTab" oncommand='ffsh_setPref("newTab");'/>
+		<command id="ffsh_setPref_newWindow" oncommand='ffsh_setPref("newWindow");'/>
+		<command id="ffsh_setPref_currentTab" oncommand='ffsh_setPref("currentTab");'/>
+
+		<stringbundle id="strings" src="chrome://ffsh/locale/strings.properties"/>
+
+		<toolbar id="ffsh_toolbar" hidden="true" fullscreentoolbar="true" insertbefore="status-bar">
+			<toolbaritem id="ffsh_toolbarItem" align="center" persist="width">
+				<toolbarbutton id="ffsh_closebutton" tooltiptext="&ffsh.closebutton_tooltip;" oncommand="ffsh_close();"/>
+
+				<label id="ffsh_fLabel" control="ffsh_field" value="&ffsh.field_label;"/>
+				<hbox id="ffsh_field_container" minwidth="100" persist="width" flex="1">
+					<textbox id="ffsh_field" oninput="ffsh_settimeout();" persist="width" onkeypress="ffsh_field_onkeypress(event);"/>
+				</hbox>
+			</toolbaritem>
+
+			<splitter onmousedown="ffsh_cleartimeout();" onmouseup="ffsh_settimeout();"/>
+
+			<toolbarspring/>
+
+			<toolbaritem align="center">
+				<label id="ffsh_mLabel" control="ffsh_mList"/>
+				<menulist id="ffsh_mList" onkeypress="ffsh_settimeout(); ffsh_field_onkeypress(event);" sizetopopup="always">
+					<menupopup onpopupshown="ffsh_cleartimeout()" onpopuphidden="ffsh_settimeout();">
+						<menuitem id="ffsh_mItem_newTab" value="newTab" command="ffsh_setPref_newTab"/>
+						<menuitem id="ffsh_mItem_newWindow" value="newWindow" command="ffsh_setPref_newWindow"/>
+						<menuitem id="ffsh_mItem_currentTab" value="currentTab" command="ffsh_setPref_currentTab"/>
+					</menupopup>
+				</menulist>
+			</toolbaritem>
+		</toolbar>
+	</window>
+</overlay>
