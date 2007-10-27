@@ -1,0 +1,68 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: GPL 2.0
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+ * The Initial Developer of ffsh is Natsakis Konstantinos.
+ * Portions created by the Initial Developer are Copyright (C) 2006
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *  Natsakis Konstantinos <gpl@aleph-0.net> (ffsh)
+ *  Dustin J. Mitchell <dustin@v.igoro.us> (ffsh)
+ * ***** END LICENSE BLOCK ***** */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#ffsh_closebutton {
+  border: 1px solid transparent;
+  padding: 3px 2px 4px 2px !important;
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-appearance: none;
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#ffsh_closebutton > .toolbarbutton-icon {
+  -moz-margin-end: 0px !important;
+  -moz-padding-end: 2px !important;
+  -moz-padding-start: 2px !important;
+}
+
+#ffsh_closebutton:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#ffsh_closebutton:hover:active {
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+
+#ffsh_toolbar {
+  border-top: 2px solid;
+  border-bottom: 1px solid;
+  -moz-appearance: none !important;
+  -moz-border-top-colors: ThreeDShadow ThreeDHighlight !important;
+  -moz-border-bottom-colors: transparent;  
+}
+
+#ffsh_field
+{
+  -moz-appearance: none;
+  border: none;
+  margin: 0px;
+}
+
+#ffsh_field_container
+{
+  -moz-appearance: textfield;
+}

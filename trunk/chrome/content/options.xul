@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+ 
+<prefwindow id="ffsh-prefs"
+     title="ffsh preferences"
+     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ 
+<prefpane id="ffsh-searchpath-pane" label="Search Path">
+  <preferences>
+    <preference id="pref_searchpath" name="extensions.ffsh.searchpath" type="string"/>
+  </preferences>
+ 
+  <vbox align="left">
+    <label control="searchpath" value="Colon-separated list of directories to search for commands: "/>
+    <textbox preference="pref_searchpath" id="searchpath" size="60"/>
+    <label value="'$profile' will be replaced by the current profile directory; '$home' will be replaced by the current home directory."/>
+  </vbox>
+</prefpane>
+ 
+</prefwindow>
